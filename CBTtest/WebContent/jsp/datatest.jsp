@@ -6,12 +6,12 @@
 <meta charset="EUC-KR">
 <title>시험응시( 3 of 6 )</title>
 <style>
-table {
+table { 
 	width: 100%;
 	border-top: 1px solid #444444;
 	border-collapse: collapse;
 	text-align: center;
-}
+} 
 
 th, td {
 	border-bottom: 1px solid #444444;
