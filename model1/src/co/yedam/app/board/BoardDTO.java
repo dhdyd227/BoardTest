@@ -9,7 +9,12 @@ public class BoardDTO {
 	private String contents;
 	private Date lastpost;
 	private int views;
-
+	public BoardDTO() {}
+	public  BoardDTO(int no,String poster,String subject) {
+		this.no=no;
+		this.poster=poster;
+		this.subject=subject;
+	}
 	public int getNo() {
 		return no;
 	}
