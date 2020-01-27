@@ -13,7 +13,7 @@
 
     stmt.executeQuery(mySQL);
 
-	stmt.close();   
+	stmt.close();    
 	myConn.close(); 
 %>
 
