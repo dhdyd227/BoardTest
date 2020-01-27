@@ -1,6 +1,6 @@
 <%@ page import="java.sql.*"  %>
 <%
-	Conncection myConn = null;     
+	Connection myConn = null;     
 	Statement stmt = null;	
 	ResultSet myResultSet = null; 
 	String mySQL = "";
