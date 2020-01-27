@@ -15,7 +15,7 @@
 			myConn =  DriverManager.getConnection (dburl, user, passwd);
 			stmt = myConn.createStatement();	
 			System.err.println("success connect");
-			//System.out.println("success connect");
+			System.out.println("success connect");
 	} catch(SQLException ex) {
 			System.err.println("SQLException: " + ex.getMessage());
 	}
