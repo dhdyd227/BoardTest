@@ -41,11 +41,19 @@ public class NewFrontController extends HttpServlet {
 		//�궘�젣
 		//�긽�꽭蹂닿린
 		
+<<<<<<< HEAD
 		//紐⑸줉
 		cont.put("/boardList",new BoardCommandSelectList());
 		//�닔�젙�뤌
 		cont.put("/boardCreateForm",new BoardCommandCreateForm());
 		//�벑濡앺뤌
+=======
+		//목록
+		cont.put("/boardList.do",new BoardCommandSelectList());
+		//수정폼
+		cont.put("/boardCreateForm.do",new BoardCommandCreateForm());
+		//등록폼
+>>>>>>> branch 'master' of https://github.com/dhdyd227/BoardTest.git
 		
 		//member
 		
