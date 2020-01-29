@@ -19,7 +19,7 @@ import co.yedam.app.board.BoardCommandSelectList;
 /**
  * Servlet implementation class asdsad
  */
-@WebServlet("/")
+@WebServlet("*.do")
 public class NewFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HashMap<String,Command> cont = new HashMap<String,Command>();
@@ -42,9 +42,9 @@ public class NewFrontController extends HttpServlet {
 		//상세보기
 		
 		//목록
-		cont.put("/boardList",new BoardCommandSelectList());
+		cont.put("/boardList.do",new BoardCommandSelectList());
 		//수정폼
-		cont.put("/boardCreateForm",new BoardCommandCreateForm());
+		cont.put("/boardCreateForm.do",new BoardCommandCreateForm());
 		//등록폼
 		
 		//member
