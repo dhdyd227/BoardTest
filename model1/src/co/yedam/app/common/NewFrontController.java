@@ -19,7 +19,7 @@ import co.yedam.app.board.BoardCommandSelectList;
 /**
  * Servlet implementation class asdsad
  */
-@WebServlet("/")
+@WebServlet("*.do")
 public class NewFrontController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	HashMap<String,Command> cont = new HashMap<String,Command>();
@@ -33,19 +33,19 @@ public class NewFrontController extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		//해쉬맵 구조를 put() 적어준다.
+		//�빐�돩留� 援ъ“瑜� put() �쟻�뼱以��떎.
 		
 	//	cont.put("/index.do.do",new );
-		//등록
-		//수정
-		//삭제
-		//상세보기
+		//�벑濡�
+		//�닔�젙
+		//�궘�젣
+		//�긽�꽭蹂닿린
 		
-		//목록
+		//紐⑸줉
 		cont.put("/boardList",new BoardCommandSelectList());
-		//수정폼
+		//�닔�젙�뤌
 		cont.put("/boardCreateForm",new BoardCommandCreateForm());
-		//등록폼
+		//�벑濡앺뤌
 		
 		//member
 		
@@ -57,9 +57,9 @@ public class NewFrontController extends HttpServlet {
 		String url = request.getRequestURI();
 		String context = request.getContextPath();
 		String path = url.substring(context.length());
-		//로그처리
+		//濡쒓렇泥섎━
 		System.out.println("path="+path);
-		//군한 체크(로그인체크)
+		//援고븳 泥댄겕(濡쒓렇�씤泥댄겕)
 		
 		Command commandImpl = cont.get(path);
 		String page = null;
@@ -70,7 +70,7 @@ public class NewFrontController extends HttpServlet {
 //			RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 //			dispatcher.forward(request,response);
 		}else {
-			response.getWriter().append("잘못된요청");
+			response.getWriter().append("�옒紐삳맂�슂泥�");
 		}
 		
 	}
