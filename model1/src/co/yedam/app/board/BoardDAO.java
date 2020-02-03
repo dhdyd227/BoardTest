@@ -81,7 +81,7 @@ public class BoardDAO extends DAO {
 				dto.setPoster(rs.getString("poster"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setContents(rs.getString("contents"));
-				dto.setDate(rs.getDate("lastpost"));
+				//dto.setDate(rs.getDate("lastpost"));
 				dto.setViews(rs.getInt("views"));
 			}
 
@@ -110,7 +110,7 @@ public class BoardDAO extends DAO {
 				dto.setPoster(rs.getString("poster"));
 				dto.setSubject(rs.getString("subject"));
 				dto.setContents(rs.getString("contents"));
-				dto.setDate(rs.getDate("lastpost"));
+				//dto.setDate(rs.getDate("lastpost"));
 				dto.setViews(rs.getInt("views"));
 				list.add(dto);
 			}

@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.app.board.BoardCommandCreateForm;
 import co.yedam.app.board.BoardCommandSelectList;
+import co.yedam.app.boardAjax.AjaxBoardList;
+import co.yedam.app.boardAjax.AjaxBoardOne;
 
 
 /**
@@ -37,17 +39,19 @@ public class NewFrontController extends HttpServlet {
 		
 	//	cont.put("/index.do.do",new );
 		
-		//紐⑸줉
+		//보드 리스트
 		cont.put("/boardList",new BoardCommandSelectList());
-		//�닔�젙�뤌
+		
 		cont.put("/boardCreateForm",new BoardCommandCreateForm());
-		//�벑濡앺뤌
+		
 		//목록
 		cont.put("/boardList.do",new BoardCommandSelectList());
 		//수정폼
 		cont.put("/boardCreateForm.do",new BoardCommandCreateForm());
 		//등록폼
 		
+		cont.put("/ajaxBoardList.do",new AjaxBoardList());
+		cont.put("/ajaxBoardOne.do",new AjaxBoardOne());
 		//member
 		
 //		
@@ -58,20 +62,43 @@ public class NewFrontController extends HttpServlet {
 		String url = request.getRequestURI();
 		String context = request.getContextPath();
 		String path = url.substring(context.length());
-		//濡쒓렇泥섎━
+		//
 		System.out.println("path="+path);
 		//援고븳 泥댄겕(濡쒓렇�씤泥댄겕)
 		
 		Command commandImpl = cont.get(path);
 		String page = null;
 		response.setContentType("text/html; charset=UTF-8");
+		
 		if(commandImpl != null) {
 			page =commandImpl.excute(request, response);
-			request.getRequestDispatcher(page).forward(request, response);
+			System.out.println(page);
+			System.out.println(page.startsWith("ajax:"));
+			if(page != null && !page.isEmpty()) {
+				//특정 단어로 시작
+				if(page.startsWith("redirect:")) {
+					String view = page.substring(9);
+					System.out.println("---redirect---");
+					response.sendRedirect(view);
+				}else if(page.startsWith("ajax:")) {
+					String view =page.substring(5);
+					System.out.println("---ajax---");
+					response.getWriter().append(view);
+					
+				}else if(page.startsWith("script:")) {
+					System.out.println("---script---");
+					response.getWriter().append("<script>")
+										.append(page.substring(7))
+										.append("</script>");
+				}else {
+					request.getRequestDispatcher(page).forward(request, response);
+				}
+			}
+			
 //			RequestDispatcher dispatcher = request.getRequestDispatcher(page);
 //			dispatcher.forward(request,response);
 		}else {
-			response.getWriter().append("�옒紐삳맂�슂泥�");
+			System.out.println("commandImpl;else");
 		}
 		
 	}
