@@ -3,7 +3,6 @@ package co.yedam.app.common;
 import java.io.IOException;
 import java.util.HashMap;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -14,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.app.board.BoardCommandCreateForm;
 import co.yedam.app.board.BoardCommandSelectList;
+import co.yedam.app.board.FileUpload;
 import co.yedam.app.boardAjax.AjaxBoardList;
 import co.yedam.app.boardAjax.AjaxBoardOne;
 import co.yedam.app.users.command.DeleteUsers;
@@ -68,6 +68,8 @@ public class NewFrontController extends HttpServlet {
 		cont.put("/ajax/InsertUsers.do",new InsertUsers());
 		cont.put("/ajax/UpdateUsers.do",new UpdateUsers());
 		
+		cont.put("/FileUpload.do",new FileUpload());
+		
 //		
 	}
 
@@ -87,9 +89,10 @@ public class NewFrontController extends HttpServlet {
 		if(commandImpl != null) {
 			page =commandImpl.excute(request, response);
 			System.out.println(page);
-			System.out.println(page.startsWith("ajax:"));
+			
 			if(page != null && !page.isEmpty()) {
 				//특정 단어로 시작
+				System.out.println(page.startsWith("ajax:"));
 				if(page.startsWith("redirect:")) {
 					String view = page.substring(9);
 					System.out.println("---redirect---");
