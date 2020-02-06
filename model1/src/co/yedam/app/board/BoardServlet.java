@@ -28,15 +28,11 @@ public class BoardServlet extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1. 요청 파리미터 받기
 		
-		//2. 요청 처리(조회)
 		BoardDAO dao = new BoardDAO();
 		List<BoardDTO> list = dao.selectList();
 		
-		//3. 결과 저장
 		request.setAttribute("list",list);
-		//4. view 페이지로 포워드
 		request.getRequestDispatcher("board/list.jsp")
 			.forward(request, response);
 		
