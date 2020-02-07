@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import co.yedam.app.ajax.GetDeptCnt;
 import co.yedam.app.board.BoardCommandCreateForm;
 import co.yedam.app.board.BoardCommandSelectList;
 import co.yedam.app.board.FileUpload;
@@ -67,6 +68,9 @@ public class NewFrontController extends HttpServlet {
 		cont.put("/ajax/GetUsersList.do",new GetUsersList());
 		cont.put("/ajax/InsertUsers.do",new InsertUsers());
 		cont.put("/ajax/UpdateUsers.do",new UpdateUsers());
+		
+		cont.put("/ajax/GetDeptCnt.do",new GetDeptCnt());
+		
 		
 		cont.put("/FileUpload.do",new FileUpload());
 		

@@ -13,18 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/GetNumber.do")
 public class GetNumber extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public GetNumber() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Integer no = 2345;
 		response.getWriter().append(no.toString());

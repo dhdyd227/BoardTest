@@ -8,9 +8,9 @@ import java.sql.SQLException;
 
 
 public class DAO {
-	Connection conn;
-	PreparedStatement psmt;
-	ResultSet rs;
+	protected Connection conn;
+	protected PreparedStatement psmt;
+	protected ResultSet rs;
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
