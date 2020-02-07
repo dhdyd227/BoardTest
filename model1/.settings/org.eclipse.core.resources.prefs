@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//WebContent/js/builtinObject.jsp=UTF-8
 encoding//WebContent/js/json.jsp=UTF-8
+encoding//src/co/yedam/app/blob/BlobDAO.java=UTF-8
+encoding//src/co/yedam/app/board/BoardDAO.java=UTF-8
 encoding//src/co/yedam/app/common/NewFrontController.java=UTF-8
